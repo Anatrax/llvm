@@ -37,6 +37,19 @@ llvm::Value* binaryOperation(llvm::Value* lhs, llvm::Value* rhs, char op) {
   }
 }
 
+llvm::Value* assignmentStatement(const std::string& lhs, llvm::Value* rhs) {
+  if (!rhs) {
+    return NULL;
+  }
+
+  /*
+   * Have we already allocated space for lhs?
+   */
+  if (!TheSymbolTable.count(lhs)) {
+    // Allocate space for lhs
+  }
+}
+
 int main(int argc, char const *argv[]) {
   TheModule = new llvm::Module("LLVM_Demo", TheContext);
 
