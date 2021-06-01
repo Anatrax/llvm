@@ -10,7 +10,7 @@ ifndef LLVM_CONFIG
 endif
 
 all: compiler.cpp
-	g++ -std=c++11 compiler.cpp  `llvm-config --cppflags --ldflags --libs --system-libs all` -o compiler
+	g++ -std=c++11 compiler.cpp $(shell $(LLVM_CONFIG) --cppflags --ldflags --libs --system-libs all) -o compiler
 
 testAddRecursive: testAddRecursive.cpp addRecursive.o
 	g++ testAddRecursive.cpp addRecursive.o -o testAddRecursive
