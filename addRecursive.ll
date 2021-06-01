@@ -7,7 +7,7 @@ entry:
 recurse:
   %tmp2 = sub i32 %a, 1
   %tmp3 = add i32 %b, 1
-  store i32 %tmp3 i32* %X
+  store i32 %tmp3, i32* %X
   %tmp4 = call i32 @addRecursive(i32 %tmp2, i32 %tmp3)
   ret i32 %tmp4
 
