@@ -9,6 +9,7 @@ recurse:
   %tmp3 = add i32 %b, 1
   store i32 %tmp3, i32* %X
   %tmp4 = call i32 @addRecursive(i32 %tmp2, i32 %tmp3)
+  %X1 = load float, float* %X
   ret i32 %tmp4
 
 done:
